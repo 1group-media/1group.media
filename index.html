@@ -71,7 +71,6 @@
     .nav-cta:hover { transform: translateY(-2px); }
 
     /* Hero Section */
-    .hero { padding: 90px 0 60px; text-align: center; }
     .telemetry-badge {
       display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px;
       background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.4);
@@ -143,39 +142,44 @@
     .btn-ghost { background: rgba(255, 255, 255, 0.05); color: #FFF; border: 1px solid var(--border); }
     .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
 
-    /* Founder & Road-Tested Banner */
+    /* Hero Section with Cinematic Motorsport Backdrop */
+    .hero {
+      padding: 110px 32px 80px; text-align: center; position: relative; border-radius: 24px;
+      margin: 20px 0 40px; overflow: hidden; border: 1px solid var(--border);
+      background: 
+        linear-gradient(180deg, rgba(6, 9, 15, 0.75) 0%, rgba(6, 9, 15, 0.92) 80%, rgba(6, 9, 15, 1) 100%),
+        url('assets/images/hero-bg.jpg') center/cover no-repeat;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.12), transparent 70%);
+    }
+
+    /* Founder & Road-Tested Banner with Atmospheric Speed BG */
     .road-banner {
-      background: linear-gradient(135deg, rgba(220, 38, 38, 0.12), rgba(245, 158, 11, 0.08));
-      border: 1px solid var(--border-accent); border-radius: 16px; padding: 40px; margin-bottom: 90px;
+      background: 
+        linear-gradient(90deg, rgba(6, 9, 15, 0.94) 0%, rgba(6, 9, 15, 0.8) 50%, rgba(6, 9, 15, 0.92) 100%),
+        url('assets/images/banner-bg.jpg') center/cover no-repeat;
+      border: 1px solid var(--border-accent); border-radius: 20px; padding: 48px; margin-bottom: 90px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5); position: relative; overflow: hidden;
     }
-    .road-info h3 { font-size: 24px; font-weight: 800; font-style: italic; text-transform: uppercase; margin-bottom: 8px; }
-    .road-info p { color: var(--text-muted); font-size: 14px; max-width: 620px; }
+    .road-banner::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--speed-gold), var(--racing-red), var(--speed-gold));
+    }
+    .road-info h3 { font-size: 26px; font-weight: 800; font-style: italic; text-transform: uppercase; margin-bottom: 8px; color: #FFF; }
+    .road-info p { color: #CBD5E1; font-size: 15px; max-width: 640px; line-height: 1.6; }
     .rider-badge {
-      display: inline-flex; align-items: center; gap: 8px; background: #000;
-      border: 1px solid var(--speed-gold); color: var(--speed-gold); padding: 8px 16px;
+      display: inline-flex; align-items: center; gap: 10px; background: rgba(0, 0, 0, 0.85);
+      border: 1px solid var(--speed-gold); color: var(--speed-gold); padding: 12px 22px;
       border-radius: 9999px; font-family: var(--font-mono); font-weight: 800; font-size: 13px;
-      text-decoration: none;
+      text-decoration: none; backdrop-filter: blur(8px); transition: all 0.2s;
     }
-    /* Racing Gallery Section */
-    .racing-section { margin-bottom: 90px; }
-    .racing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    @media (max-width: 900px) { .racing-grid { grid-template-columns: 1fr; } }
-    .racing-card {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
-      transition: transform 0.2s, border-color 0.2s; position: relative;
+    .rider-badge:hover {
+      background: var(--speed-gold); color: #000; box-shadow: 0 0 20px var(--gold-glow);
     }
-    .racing-card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
-    .racing-img-wrap { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; position: relative; }
-    .racing-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-    .racing-card:hover .racing-img-wrap img { transform: scale(1.05); }
-    .racing-content { padding: 20px; }
-    .racing-tag {
-      font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--speed-gold);
-      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block;
-    }
-    .racing-name { font-size: 18px; font-weight: 800; font-style: italic; color: #FFF; margin-bottom: 8px; }
-    .racing-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
     /* Footer */
     footer { border-top: 1px solid var(--border); padding: 40px 0; font-size: 13px; color: var(--text-muted); }
@@ -317,53 +321,6 @@
         <span>SLA 99.98% · Operaciones 24/7</span>
       </a>
     </div>
-
-    <!-- 1group Racing Team & High-Speed Culture -->
-    <section class="racing-section" id="racing">
-      <div class="section-title">Espíritu de Competencia</div>
-      <div class="section-sub">Velocidad, resistencia y rendimiento implacable en tierra, dunas y agua</div>
-
-      <div class="racing-grid">
-        <div class="racing-card">
-          <div class="racing-img-wrap">
-            <img src="assets/racing/trophy-truck.jpg" alt="1group Trophy Truck Racing" loading="lazy">
-          </div>
-          <div class="racing-content">
-            <span class="racing-tag">Baja 1000 · Desert Division</span>
-            <h4 class="racing-name">1group Trophy Truck #1</h4>
-            <p class="racing-desc">
-              Ingeniería todoterreno construida para absorber castigo a más de 120 mph en el desierto.
-            </p>
-          </div>
-        </div>
-
-        <div class="racing-card">
-          <div class="racing-img-wrap">
-            <img src="assets/racing/dakar-bike.jpg" alt="1group Rally Raid Dakar Motorcycle" loading="lazy">
-          </div>
-          <div class="racing-content">
-            <span class="racing-tag">Dakar Rally · Moto Raid</span>
-            <h4 class="racing-name">1group Rally 450 #1</h4>
-            <p class="racing-desc">
-              Navegación de precisión y fiabilidad mecánica sobre dunas en condiciones extremas.
-            </p>
-          </div>
-        </div>
-
-        <div class="racing-card">
-          <div class="racing-img-wrap">
-            <img src="assets/racing/powerboat.jpg" alt="1group Offshore Powerboat Racing" loading="lazy">
-          </div>
-          <div class="racing-content">
-            <span class="racing-tag">Offshore Class 1 · Powerboat</span>
-            <h4 class="racing-name">1group Catamaran #1</h4>
-            <p class="racing-desc">
-              Hidrodinámica y aceleración pura sobre aguas abiertas a velocidades de impacto.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer>
