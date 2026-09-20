@@ -1,0 +1,46 @@
+[debug] [2026-09-20T20:00:32.634Z] ----------------------------------------------------------------------
+[debug] [2026-09-20T20:00:32.635Z] Command:       /Users/ron/.nvm/versions/node/v24.18.0/bin/node /Users/ron/.nvm/versions/node/v24.18.0/bin/firebase deploy --only hosting --project admin-1group
+[debug] [2026-09-20T20:00:32.635Z] CLI Version:   15.30.1
+[debug] [2026-09-20T20:00:32.635Z] Platform:      darwin
+[debug] [2026-09-20T20:00:32.635Z] Node Version:  v24.18.0
+[debug] [2026-09-20T20:00:32.635Z] Detected Agent: antigravity
+[debug] [2026-09-20T20:00:32.635Z] Time:          Sun Sep 20 2026 16:00:32 GMT-0400 (Venezuela Time)
+[debug] [2026-09-20T20:00:32.635Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-20T20:00:33.223Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-20T20:00:33.223Z] > authorizing via signed-in user (ron@1group.media)
+[debug] [2026-09-20T20:00:33.223Z] [iam] checking project admin-1group for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-20T20:00:33.228Z] Checked if tokens are valid: false, expires at: 1789881074255
+[debug] [2026-09-20T20:00:33.228Z] Checked if tokens are valid: false, expires at: 1789881074255
+[debug] [2026-09-20T20:00:33.228Z] > refreshing access token with scopes: []
+[debug] [2026-09-20T20:00:33.229Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-20T20:00:33.229Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-20T20:00:33.546Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-09-20T20:00:33.547Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-20T20:00:33.547Z] [iam] error while checking permissions, command may fail: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-20T20:00:33.548Z] Checked if tokens are valid: false, expires at: 1789881074255
+[debug] [2026-09-20T20:00:33.548Z] Checked if tokens are valid: false, expires at: 1789881074255
+[debug] [2026-09-20T20:00:33.548Z] > refreshing access token with scopes: []
+[debug] [2026-09-20T20:00:33.549Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-20T20:00:33.549Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-20T20:00:33.720Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-09-20T20:00:33.721Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-20T20:00:33.721Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier

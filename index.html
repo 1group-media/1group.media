@@ -157,6 +157,25 @@
       border-radius: 9999px; font-family: var(--font-mono); font-weight: 800; font-size: 13px;
       text-decoration: none;
     }
+    /* Racing Gallery Section */
+    .racing-section { margin-bottom: 90px; }
+    .racing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 900px) { .racing-grid { grid-template-columns: 1fr; } }
+    .racing-card {
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s; position: relative;
+    }
+    .racing-card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
+    .racing-img-wrap { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; position: relative; }
+    .racing-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .racing-card:hover .racing-img-wrap img { transform: scale(1.05); }
+    .racing-content { padding: 20px; }
+    .racing-tag {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--speed-gold);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block;
+    }
+    .racing-name { font-size: 18px; font-weight: 800; font-style: italic; color: #FFF; margin-bottom: 8px; }
+    .racing-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
     /* Footer */
     footer { border-top: 1px solid var(--border); padding: 40px 0; font-size: 13px; color: var(--text-muted); }
@@ -298,6 +317,53 @@
         <span>SLA 99.98% · Operaciones 24/7</span>
       </a>
     </div>
+
+    <!-- 1group Racing Team & High-Speed Culture -->
+    <section class="racing-section" id="racing">
+      <div class="section-title">Espíritu de Competencia</div>
+      <div class="section-sub">Velocidad, resistencia y rendimiento implacable en tierra, dunas y agua</div>
+
+      <div class="racing-grid">
+        <div class="racing-card">
+          <div class="racing-img-wrap">
+            <img src="assets/racing/trophy-truck.jpg" alt="1group Trophy Truck Racing" loading="lazy">
+          </div>
+          <div class="racing-content">
+            <span class="racing-tag">Baja 1000 · Desert Division</span>
+            <h4 class="racing-name">1group Trophy Truck #1</h4>
+            <p class="racing-desc">
+              Ingeniería todoterreno construida para absorber castigo a más de 120 mph en el desierto.
+            </p>
+          </div>
+        </div>
+
+        <div class="racing-card">
+          <div class="racing-img-wrap">
+            <img src="assets/racing/dakar-bike.jpg" alt="1group Rally Raid Dakar Motorcycle" loading="lazy">
+          </div>
+          <div class="racing-content">
+            <span class="racing-tag">Dakar Rally · Moto Raid</span>
+            <h4 class="racing-name">1group Rally 450 #1</h4>
+            <p class="racing-desc">
+              Navegación de precisión y fiabilidad mecánica sobre dunas en condiciones extremas.
+            </p>
+          </div>
+        </div>
+
+        <div class="racing-card">
+          <div class="racing-img-wrap">
+            <img src="assets/racing/powerboat.jpg" alt="1group Offshore Powerboat Racing" loading="lazy">
+          </div>
+          <div class="racing-content">
+            <span class="racing-tag">Offshore Class 1 · Powerboat</span>
+            <h4 class="racing-name">1group Catamaran #1</h4>
+            <p class="racing-desc">
+              Hidrodinámica y aceleración pura sobre aguas abiertas a velocidades de impacto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>
