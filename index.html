@@ -124,24 +124,58 @@
     .grid-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-bottom: 90px; }
     
     .product-card {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
-      padding: 36px; display: flex; flex-direction: column; justify-content: space-between;
-      position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s;
+      background-color: #070B12;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 38px 32px 32px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
     }
-    .product-card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
     .product-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(7, 11, 18, 0.78) 0%, rgba(7, 11, 18, 0.90) 50%, rgba(7, 11, 18, 0.98) 100%);
+      transition: background 0.3s ease; z-index: 1;
     }
-    .card-1pay::before { background: linear-gradient(90deg, var(--speed-gold), var(--racing-red)); }
-    .card-1tab::before { background: linear-gradient(90deg, #38BDF8, #818CF8); }
-    .card-1commerce::before { background: linear-gradient(90deg, #10B981, var(--speed-gold)); }
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--speed-gold);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9), 0 0 30px var(--gold-glow);
+    }
+    .product-card:hover::before {
+      background: linear-gradient(180deg, rgba(7, 11, 18, 0.65) 0%, rgba(7, 11, 18, 0.82) 50%, rgba(7, 11, 18, 0.96) 100%);
+    }
+
+    /* Top Racing Stripe per Card */
+    .product-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 3;
+    }
+    .card-1pay { background-image: url('assets/images/card-1pay-bg.jpg'); }
+    .card-1pay::after { background: linear-gradient(90deg, var(--speed-gold), var(--racing-red)); }
+
+    .card-1tab { background-image: url('assets/images/card-1tab-bg.jpg'); }
+    .card-1tab::after { background: linear-gradient(90deg, #38BDF8, var(--speed-gold)); }
+
+    .card-1commerce { background-image: url('assets/images/card-1commerce-bg.jpg'); }
+    .card-1commerce::after { background: linear-gradient(90deg, var(--racing-red), var(--speed-gold)); }
+
+    .card-body, .card-actions { position: relative; z-index: 2; }
 
     .card-tag {
       font-family: var(--font-mono); font-size: 11px; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 1px; margin-bottom: 12px; display: inline-block;
+      letter-spacing: 1.5px; margin-bottom: 12px; display: inline-block;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
-    .card-title { font-size: 30px; font-weight: 800; font-style: italic; margin-bottom: 12px; color: #FFF; }
-    .card-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; line-height: 1.6; }
+    .card-title {
+      font-size: 34px; font-weight: 900; font-style: italic; margin-bottom: 10px; color: #FFF;
+      letter-spacing: -0.5px; text-transform: uppercase;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+    }
+    .card-desc { color: #CBD5E1; font-size: 14px; margin-bottom: 24px; line-height: 1.6; text-shadow: 0 1px 4px rgba(0,0,0,0.9); }
 
     .feature-list { list-style: none; margin-bottom: 32px; }
     .feature-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #CBD5E1; margin-bottom: 10px; }
@@ -278,8 +312,8 @@
       <div class="grid-products">
         <!-- 1pay Card -->
         <div class="product-card card-1pay">
-          <div>
-            <span class="card-tag" style="color: var(--speed-gold);">⚡ Instant Payment Engine</span>
+          <div class="card-body">
+            <span class="card-tag" style="color: var(--speed-gold);">⚡ Instant Payment Engine · Baja Edition</span>
             <h3 class="card-title">1pay</h3>
             <p class="card-desc">
               Verificación automática de Pago Móvil, Zelle y Binance Pay en mostrador. Anuncio por voz en tiempo real con soundbox inteligente.
@@ -299,8 +333,8 @@
 
         <!-- 1tab Card -->
         <div class="product-card card-1tab">
-          <div>
-            <span class="card-tag" style="color: #38BDF8;">🍸 Gastronomía & Bar POS</span>
+          <div class="card-body">
+            <span class="card-tag" style="color: #38BDF8;">🍸 Gastronomía & Bar POS · Dakar Edition</span>
             <h3 class="card-title">1tab</h3>
             <p class="card-desc">
               Comandas móviles y cuentas abiertas para bares y restaurantes. Tus comensales abren su tab desde el móvil y pagan sin hacer colas.
@@ -319,8 +353,8 @@
 
         <!-- 1commerce Card -->
         <div class="product-card card-1commerce">
-          <div>
-            <span class="card-tag" style="color: #10B981;">🛒 Conversational Commerce</span>
+          <div class="card-body">
+            <span class="card-tag" style="color: #10B981;">🛒 Conversational Commerce · Offshore Edition</span>
             <h3 class="card-title">1commerce</h3>
             <p class="card-desc">
               Ventas fluidas por WhatsApp y redes sociales. Catálogo interactivo con carrito de compras y verificación inmediata de transacciones.
