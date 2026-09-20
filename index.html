@@ -11,6 +11,19 @@
   <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/images/symbol-192.png">
   <meta property="og:image" content="https://1group.media/assets/images/logo-white.png">
+  <script>
+    // Evict any ghost 1pay Service Workers and CacheStorage
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let r of registrations) r.unregister();
+      });
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (let name of names) caches.delete(name);
+        });
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
