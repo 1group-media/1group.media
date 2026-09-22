@@ -44,3 +44,80 @@ For CI servers and headless environments, generate a new token with firebase log
 For CI servers and headless environments, generate a new token with firebase login:ci
 [error] 
 [error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2026-09-22T22:36:41.824Z] ----------------------------------------------------------------------
+[debug] [2026-09-22T22:36:41.825Z] Command:       /Users/ron/.nvm/versions/node/v24.18.0/bin/node /Users/ron/.npm/_npx/ba4f1959e38407b5/node_modules/.bin/firebase deploy --only hosting --project admin-1group
+[debug] [2026-09-22T22:36:41.825Z] CLI Version:   15.30.2
+[debug] [2026-09-22T22:36:41.825Z] Platform:      darwin
+[debug] [2026-09-22T22:36:41.825Z] Node Version:  v24.18.0
+[debug] [2026-09-22T22:36:41.825Z] Detected Agent: antigravity
+[debug] [2026-09-22T22:36:41.825Z] Time:          Tue Sep 22 2026 18:36:41 GMT-0400 (Venezuela Time)
+[debug] [2026-09-22T22:36:41.825Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-22T22:36:42.479Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-22T22:36:42.479Z] > authorizing via signed-in user (ron@1group.media)
+[debug] [2026-09-22T22:36:42.480Z] [iam] checking project admin-1group for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-22T22:36:42.484Z] Checked if tokens are valid: false, expires at: 1789958405041
+[debug] [2026-09-22T22:36:42.484Z] Checked if tokens are valid: false, expires at: 1789958405041
+[debug] [2026-09-22T22:36:42.484Z] > refreshing access token with scopes: []
+[debug] [2026-09-22T22:36:42.485Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-22T22:36:42.485Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-22T22:36:42.801Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-09-22T22:36:42.802Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-22T22:36:42.802Z] [iam] error while checking permissions, command may fail: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-22T22:36:42.803Z] Checked if tokens are valid: false, expires at: 1789958405041
+[debug] [2026-09-22T22:36:42.803Z] Checked if tokens are valid: false, expires at: 1789958405041
+[debug] [2026-09-22T22:36:42.803Z] > refreshing access token with scopes: []
+[debug] [2026-09-22T22:36:42.803Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-22T22:36:42.803Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-22T22:36:42.944Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-09-22T22:36:42.944Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-22T22:36:42.944Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2026-09-22T22:37:49.671Z] ----------------------------------------------------------------------
+[debug] [2026-09-22T22:37:49.672Z] Command:       /Users/ron/.nvm/versions/node/v24.18.0/bin/node /Users/ron/.npm/_npx/ba4f1959e38407b5/node_modules/.bin/firebase deploy --only hosting --project admin-1group
+[debug] [2026-09-22T22:37:49.672Z] CLI Version:   15.30.2
+[debug] [2026-09-22T22:37:49.672Z] Platform:      darwin
+[debug] [2026-09-22T22:37:49.672Z] Node Version:  v24.18.0
+[debug] [2026-09-22T22:37:49.672Z] Detected Agent: antigravity
+[debug] [2026-09-22T22:37:49.672Z] Time:          Tue Sep 22 2026 18:37:49 GMT-0400 (Venezuela Time)
+[debug] [2026-09-22T22:37:49.672Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-22T22:37:50.008Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-22T22:37:50.008Z] > authorizing via signed-in user (ron@1group.media)
+[debug] [2026-09-22T22:37:50.008Z] [iam] checking project admin-1group for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-22T22:37:50.013Z] Checked if tokens are valid: true, expires at: 1790120246530
+[debug] [2026-09-22T22:37:50.013Z] Checked if tokens are valid: true, expires at: 1790120246530
+[debug] [2026-09-22T22:37:50.013Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/admin-1group:testIamPermissions [none]
+[debug] [2026-09-22T22:37:50.013Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/admin-1group:testIamPermissions  x-goog-user-project=admin-1group
+[debug] [2026-09-22T22:37:50.013Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/admin-1group:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-22T22:37:50.465Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/admin-1group:testIamPermissions 200
+[debug] [2026-09-22T22:37:50.465Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/admin-1group:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-22T22:37:50.466Z] Checked if tokens are valid: true, expires at: 1790120246530
+[debug] [2026-09-22T22:37:50.466Z] Checked if tokens are valid: true, expires at: 1790120246530
+[debug] [2026-09-22T22:37:50.466Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/admin-1group [none]
+[debug] [2026-09-22T22:37:50.824Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/admin-1group 403
+[debug] [2026-09-22T22:37:50.825Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/admin-1group {"error":{"code":403,"message":"Your application is authenticating by using local Application Default Credentials. The firebase.googleapis.com API requires a quota project, which is not set by default. To learn how to set your quota project, see https://cloud.google.com/docs/authentication/adc-troubleshooting/user-creds .","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"service":"firebase.googleapis.com","consumer":"projects/32555940559"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Your application is authenticating by using local Application Default Credentials. The firebase.googleapis.com API requires a quota project, which is not set by default. To learn how to set your quota project, see https://cloud.google.com/docs/authentication/adc-troubleshooting/user-creds ."}]}}
+[debug] [2026-09-22T22:37:50.826Z] Request to https://firebase.googleapis.com/v1beta1/projects/admin-1group had HTTP Error: 403, Your application is authenticating by using local Application Default Credentials. The firebase.googleapis.com API requires a quota project, which is not set by default. To learn how to set your quota project, see https://cloud.google.com/docs/authentication/adc-troubleshooting/user-creds .
+[debug] [2026-09-22T22:37:51.054Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/admin-1group had HTTP Error: 403, Your application is authenticating by using local Application Default Credentials. The firebase.googleapis.com API requires a quota project, which is not set by default. To learn how to set your quota project, see https://cloud.google.com/docs/authentication/adc-troubleshooting/user-creds .
+    at responseToError (/Users/ron/.npm/_npx/ba4f1959e38407b5/node_modules/firebase-tools/lib/responseToError.js:53:12)
+    at RetryOperation._fn (/Users/ron/.npm/_npx/ba4f1959e38407b5/node_modules/firebase-tools/lib/apiv2.js:415:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[error] 
+[error] Error: Failed to get Firebase project admin-1group. Please make sure the project exists and your account has permission to access it.

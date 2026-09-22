@@ -5,6 +5,10 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   deploy:
     name: Deploy Website
@@ -13,10 +17,14 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Authenticate to Google Cloud via WIF
+        uses: google-github-actions/auth@v2
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ADMIN_1GROUP || secrets.FIREBASE_SERVICE_ACCOUNT_ONEPAY }}
-          channelId: live
-          projectId: admin-1group
+          workload_identity_provider: 'projects/1025555791022/locations/global/workloadIdentityPools/github-actions/providers/github'
+          service_account: 'firebase-adminsdk-fbsvc@admin-1group.iam.gserviceaccount.com'
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Deploy to Firebase Hosting
+        run: firebase deploy --only hosting --project admin-1group
