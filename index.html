@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1group.media — High-Performance Software & Payments</title>
-  <meta name="description" content="1group.media construye infraestructura financiera de alta velocidad y herramientas de comercio para Venezuela: 1pay, 1tab y 1commerce.">
+  <meta name="description" content="1group.media construye la infraestructura financiera y operativa para Venezuela: 1pay, 1tab, 1commerce, 1service, 1delivery y 1search.">
   <meta property="og:title" content="1group.media — High-Performance Software & Payments">
-  <meta property="og:description" content="Infraestructura tecnológica de alta velocidad para la economía real en Venezuela.">
+  <meta property="og:description" content="Infraestructura tecnológica de alta velocidad y circuito cerrado para la economía real en Venezuela.">
   <meta property="og:image" content="https://1group.media/assets/images/logo-white.png">
   <meta property="og:url" content="https://1group.media">
   <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
@@ -34,6 +34,9 @@
       --speed-gold: #F59E0B;
       --gold-glow: rgba(245, 158, 11, 0.2);
       --red-glow: rgba(220, 38, 38, 0.2);
+      --electric-blue: #38BDF8;
+      --emerald-green: #10B981;
+      --purple-acc: #A855F7;
       --text: #F8FAFC;
       --text-muted: #8896A6;
       --font-mono: 'JetBrains Mono', monospace;
@@ -42,7 +45,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Space Grotesk', sans-serif; }
     body { background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.5; }
 
-    /* Carbon Texture & Speed Lines Overlay */
+    /* Asphalt Grid & Background Glows */
     .asphalt-grid {
       position: fixed; inset: 0; pointer-events: none; z-index: 0;
       background-image: 
@@ -62,128 +65,138 @@
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
     /* Header */
-    header { padding: 28px 0 20px; border-bottom: 1px solid var(--border); }
-    .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+    header { padding: 24px 0 18px; border-bottom: 1px solid var(--border); }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .brand-logo { display: flex; align-items: center; text-decoration: none; }
     .brand-logo img {
-      height: 72px; width: auto; object-fit: contain;
+      height: 64px; width: auto; object-fit: contain;
       filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(245, 158, 11, 0.25));
-      transition: transform 0.25s ease, filter 0.25s ease;
+      transition: transform 0.25s ease;
     }
-    .brand-logo:hover img {
-      transform: scale(1.04) rotate(-0.5deg);
-      filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 1)) drop-shadow(0 0 32px var(--gold-glow));
-    }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 700; transition: color 0.15s; }
+    .brand-logo:hover img { transform: scale(1.03); }
+    .nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 700; transition: color 0.15s; }
     .nav-links a:hover { color: #FFF; }
     .nav-cta {
       background: linear-gradient(135deg, var(--speed-gold), var(--racing-red));
-      color: #000; font-weight: 800; font-size: 13px; padding: 10px 18px; border-radius: 8px;
+      color: #000; font-weight: 800; font-size: 12px; padding: 8px 16px; border-radius: 8px;
       text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
       box-shadow: 0 0 16px var(--gold-glow); transition: transform 0.15s;
     }
     .nav-cta:hover { transform: translateY(-2px); }
 
     /* Hero Section */
+    .hero {
+      padding: 70px 32px 60px; text-align: center; position: relative; border-radius: 24px;
+      margin: 24px 0 36px; overflow: hidden; border: 1px solid var(--border);
+      background: 
+        linear-gradient(180deg, rgba(6, 9, 15, 0.75) 0%, rgba(6, 9, 15, 0.92) 80%, rgba(6, 9, 15, 1) 100%),
+        url('assets/images/hero-bg.jpg') center/cover no-repeat;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .hero-brand-wrap { margin-bottom: 20px; display: inline-flex; align-items: center; justify-content: center; position: relative; }
+    .hero-brand-logo { height: 96px; width: auto; object-fit: contain; }
+
     .telemetry-badge {
       display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px;
       background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.4);
-      border-radius: 9999px; font-family: var(--font-mono); font-size: 12px; font-weight: 700;
-      color: #F87171; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px;
+      border-radius: 9999px; font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      color: #F87171; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;
     }
+
     .hero h1 {
-      font-size: clamp(38px, 6vw, 68px); font-weight: 800; font-style: italic;
-      line-height: 1.05; letter-spacing: -1.5px; max-width: 980px; margin: 0 auto 24px;
+      font-size: clamp(34px, 5.5vw, 62px); font-weight: 800; font-style: italic;
+      line-height: 1.08; letter-spacing: -1.5px; max-width: 980px; margin: 0 auto 20px;
       text-transform: uppercase;
     }
     .hero h1 span.gold { color: var(--speed-gold); text-shadow: 0 0 24px var(--gold-glow); }
     .hero h1 span.red { color: var(--racing-red); text-shadow: 0 0 24px var(--red-glow); }
-
     .hero-sub {
-      font-size: 18px; color: var(--text-muted); max-width: 720px; margin: 0 auto 36px; font-weight: 500;
+      font-size: 17px; color: var(--text-muted); max-width: 760px; margin: 0 auto 28px; font-weight: 500;
     }
 
     /* Telemetry HUD Strip */
     .hud-strip {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;
       background: var(--bg-surface); border: 1px solid var(--border); border-radius: 14px;
-      padding: 20px 24px; margin-bottom: 80px; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      padding: 18px 20px; margin-bottom: 70px; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
     }
-    .hud-item { border-left: 2px solid var(--speed-gold); padding-left: 14px; text-align: left; }
-    .hud-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
-    .hud-val { font-size: 22px; font-weight: 800; font-family: var(--font-mono); color: #FFF; margin-top: 2px; }
+    .hud-item { border-left: 2px solid var(--speed-gold); padding-left: 12px; text-align: left; }
+    .hud-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+    .hud-val { font-size: 20px; font-weight: 800; font-family: var(--font-mono); color: #FFF; margin-top: 2px; }
 
-    /* Products Grid */
+    /* Section Titles */
     .section-title {
-      font-size: 28px; font-weight: 800; font-style: italic; text-transform: uppercase;
-      letter-spacing: -0.5px; margin-bottom: 8px;
+      font-size: 30px; font-weight: 800; font-style: italic; text-transform: uppercase;
+      letter-spacing: -0.5px; margin-bottom: 6px;
     }
     .section-sub { color: var(--text-muted); font-size: 15px; margin-bottom: 32px; }
 
-    .grid-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-bottom: 90px; }
+    /* Architecture HUD Section */
+    .arch-container {
+      background: var(--bg-surface); border: 1px solid var(--border-accent);
+      border-radius: 20px; padding: 40px 32px; margin-bottom: 80px; position: relative;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .arch-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+      margin-top: 28px;
+    }
+    .arch-step {
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px; position: relative;
+    }
+    .arch-step-num {
+      font-family: var(--font-mono); font-size: 12px; font-weight: 800; color: var(--speed-gold);
+      background: rgba(245, 158, 11, 0.1); display: inline-block; padding: 4px 10px; border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .arch-step h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #FFF; }
+    .arch-step p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* Products Grid */
+    .grid-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-bottom: 90px; }
     
     .product-card {
-      background-color: #070B12;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 38px 32px 32px;
-      display: flex; flex-direction: column; justify-content: space-between;
-      position: relative; overflow: hidden;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+      background-color: #070B12; background-position: center; background-size: cover; background-repeat: no-repeat;
+      border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px;
+      padding: 34px 28px 28px; display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden; transition: transform 0.25s ease, border-color 0.25s ease;
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
     }
     .product-card::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(7, 11, 18, 0.78) 0%, rgba(7, 11, 18, 0.90) 50%, rgba(7, 11, 18, 0.98) 100%);
-      transition: background 0.3s ease; z-index: 1;
+      background: linear-gradient(180deg, rgba(7, 11, 18, 0.82) 0%, rgba(7, 11, 18, 0.94) 70%, rgba(7, 11, 18, 0.99) 100%);
+      z-index: 1;
     }
-    .product-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--speed-gold);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9), 0 0 30px var(--gold-glow);
-    }
-    .product-card:hover::before {
-      background: linear-gradient(180deg, rgba(7, 11, 18, 0.65) 0%, rgba(7, 11, 18, 0.82) 50%, rgba(7, 11, 18, 0.96) 100%);
-    }
+    .product-card:hover { transform: translateY(-5px); border-color: var(--speed-gold); }
+    .product-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 3; }
 
-    /* Top Racing Stripe per Card */
-    .product-card::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 3;
-    }
     .card-1pay { background-image: url('assets/images/card-1pay-bg.jpg'); }
     .card-1pay::after { background: linear-gradient(90deg, var(--speed-gold), var(--racing-red)); }
 
     .card-1tab { background-image: url('assets/images/card-1tab-bg.jpg'); }
-    .card-1tab::after { background: linear-gradient(90deg, #38BDF8, var(--speed-gold)); }
+    .card-1tab::after { background: linear-gradient(90deg, var(--electric-blue), var(--speed-gold)); }
 
     .card-1commerce { background-image: url('assets/images/card-1commerce-bg.jpg'); }
-    .card-1commerce::after { background: linear-gradient(90deg, var(--racing-red), var(--speed-gold)); }
+    .card-1commerce::after { background: linear-gradient(90deg, var(--emerald-green), var(--speed-gold)); }
+
+    .card-1service::after { background: linear-gradient(90deg, var(--racing-red), var(--electric-blue)); }
+    .card-1delivery::after { background: linear-gradient(90deg, var(--speed-gold), var(--purple-acc)); }
+    .card-1search::after { background: linear-gradient(90deg, var(--electric-blue), var(--emerald-green)); }
 
     .card-body, .card-actions { position: relative; z-index: 2; }
+    .card-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; display: inline-block; }
+    .card-title { font-size: 30px; font-weight: 900; font-style: italic; margin-bottom: 8px; color: #FFF; text-transform: uppercase; }
+    .card-desc { color: #CBD5E1; font-size: 13.5px; margin-bottom: 20px; line-height: 1.6; }
 
-    .card-tag {
-      font-family: var(--font-mono); font-size: 11px; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 12px; display: inline-block;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    }
-    .card-title {
-      font-size: 34px; font-weight: 900; font-style: italic; margin-bottom: 10px; color: #FFF;
-      letter-spacing: -0.5px; text-transform: uppercase;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
-    }
-    .card-desc { color: #CBD5E1; font-size: 14px; margin-bottom: 24px; line-height: 1.6; text-shadow: 0 1px 4px rgba(0,0,0,0.9); }
-
-    .feature-list { list-style: none; margin-bottom: 32px; }
-    .feature-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #CBD5E1; margin-bottom: 10px; }
+    .feature-list { list-style: none; margin-bottom: 24px; }
+    .feature-list li { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #CBD5E1; margin-bottom: 8px; }
     .feature-list li span { color: var(--speed-gold); font-weight: 800; }
 
     .card-actions { display: flex; gap: 10px; }
     .btn {
-      flex: 1; padding: 12px 18px; border-radius: 8px; font-size: 13px; font-weight: 700;
+      flex: 1; padding: 11px 16px; border-radius: 8px; font-size: 12.5px; font-weight: 700;
       text-align: center; text-decoration: none; cursor: pointer; transition: all 0.15s;
     }
     .btn-gold { background: var(--speed-gold); color: #000; font-weight: 800; }
@@ -191,60 +204,30 @@
     .btn-ghost { background: rgba(255, 255, 255, 0.05); color: #FFF; border: 1px solid var(--border); }
     .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
 
-    /* Hero Section with Cinematic Motorsport Backdrop */
-    .hero {
-      padding: 90px 32px 70px; text-align: center; position: relative; border-radius: 24px;
-      margin: 20px 0 40px; overflow: hidden; border: 1px solid var(--border);
-      background: 
-        linear-gradient(180deg, rgba(6, 9, 15, 0.75) 0%, rgba(6, 9, 15, 0.92) 80%, rgba(6, 9, 15, 1) 100%),
-        url('assets/images/hero-bg.jpg') center/cover no-repeat;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    }
-    .hero::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.12), transparent 70%);
-    }
-    .hero-brand-wrap {
-      margin-bottom: 24px; display: inline-flex; align-items: center; justify-content: center;
-      position: relative;
-    }
-    .hero-brand-wrap::before {
-      content: ''; position: absolute; width: 280px; height: 100px;
-      background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.25) 0%, rgba(220, 38, 38, 0.15) 50%, transparent 70%);
-      filter: blur(20px); pointer-events: none; z-index: 0;
-    }
-    .hero-brand-logo {
-      height: 110px; width: auto; object-fit: contain; position: relative; z-index: 1;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.9)) drop-shadow(0 0 36px rgba(245, 158, 11, 0.3));
-    }
-
-    /* Founder & Road-Tested Banner with Atmospheric Speed BG */
+    /* Founder & Road-Tested Banner */
     .road-banner {
       background: 
         linear-gradient(90deg, rgba(6, 9, 15, 0.94) 0%, rgba(6, 9, 15, 0.8) 50%, rgba(6, 9, 15, 0.92) 100%),
         url('assets/images/banner-bg.jpg') center/cover no-repeat;
-      border: 1px solid var(--border-accent); border-radius: 20px; padding: 48px; margin-bottom: 90px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+      border: 1px solid var(--border-accent); border-radius: 20px; padding: 40px; margin-bottom: 80px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
       box-shadow: 0 16px 40px rgba(0,0,0,0.5); position: relative; overflow: hidden;
     }
     .road-banner::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, var(--speed-gold), var(--racing-red), var(--speed-gold));
     }
-    .road-info h3 { font-size: 26px; font-weight: 800; font-style: italic; text-transform: uppercase; margin-bottom: 8px; color: #FFF; }
-    .road-info p { color: #CBD5E1; font-size: 15px; max-width: 640px; line-height: 1.6; }
+    .road-info h3 { font-size: 24px; font-weight: 800; font-style: italic; text-transform: uppercase; margin-bottom: 8px; color: #FFF; }
+    .road-info p { color: #CBD5E1; font-size: 14px; max-width: 680px; line-height: 1.6; }
     .rider-badge {
       display: inline-flex; align-items: center; gap: 10px; background: rgba(0, 0, 0, 0.85);
-      border: 1px solid var(--speed-gold); color: var(--speed-gold); padding: 12px 22px;
-      border-radius: 9999px; font-family: var(--font-mono); font-weight: 800; font-size: 13px;
-      text-decoration: none; backdrop-filter: blur(8px); transition: all 0.2s;
-    }
-    .rider-badge:hover {
-      background: var(--speed-gold); color: #000; box-shadow: 0 0 20px var(--gold-glow);
+      border: 1px solid var(--speed-gold); color: var(--speed-gold); padding: 10px 20px;
+      border-radius: 9999px; font-family: var(--font-mono); font-weight: 800; font-size: 12px;
+      text-decoration: none; backdrop-filter: blur(8px);
     }
 
     /* Footer */
-    footer { border-top: 1px solid var(--border); padding: 40px 0; font-size: 13px; color: var(--text-muted); }
+    footer { border-top: 1px solid var(--border); padding: 36px 0; font-size: 13px; color: var(--text-muted); }
     .footer-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   </style>
 </head>
@@ -258,11 +241,15 @@
           <img src="assets/images/logo-white.png" alt="1group.media">
         </a>
         <nav class="nav-links">
+          <a href="#architecture">Arquitectura</a>
           <a href="#products">Ecosistema</a>
           <a href="https://pay.1group.media">1pay</a>
           <a href="https://tab.1group.media">1tab</a>
-          <a href="mailto:ron@1group.media">Contacto</a>
-          <a href="https://pay.1group.media" class="nav-cta">Lanzar 1pay</a>
+          <a href="https://shop.1group.media">1commerce</a>
+          <a href="https://service.1group.media">1service</a>
+          <a href="https://delivery.1group.media">1delivery</a>
+          <a href="https://search.1group.media">1search</a>
+          <a href="mailto:ron@1group.media" class="nav-cta">Contacto</a>
         </nav>
       </div>
     </header>
@@ -274,13 +261,13 @@
       </div>
       <div class="telemetry-badge">
         <span>⚡</span>
-        <span>Telemetry Live · Latencia < 2000ms · Cobertura Total</span>
+        <span>Telemetry Live · Anaco Hub · Circuito Cerrado Autónomo</span>
       </div>
       <h1>
-        Infraestructura de Software y Pagos a <span class="gold">Máxima</span> <span class="red">Velocidad</span>
+        Sistema Operativo de Comercio y Pagos a <span class="gold">Máxima</span> <span class="red">Velocidad</span>
       </h1>
       <p class="hero-sub">
-        Soluciones de misión crítica para la economía real en Venezuela. Cero capturas falsas, comandas instantáneas y comercio automatizado.
+        Infraestructura unificada para la economía real en Venezuela. Cero capturas falsas, comandas instantáneas, gestión de talleres, despacho en moto y radar hiperlocal de precios.
       </p>
     </section>
 
@@ -295,33 +282,66 @@
         <div class="hud-val">99.98%</div>
       </div>
       <div class="hud-item">
-        <div class="hud-label">Bancos Soportados</div>
-        <div class="hud-val">BDV · Banesco + 6</div>
+        <div class="hud-label">Motor de Datos</div>
+        <div class="hud-val">PostgreSQL 17</div>
       </div>
       <div class="hud-item" style="border-color: var(--racing-red);">
+        <div class="hud-label">Despacho Autónomo</div>
+        <div class="hud-val">0 Clicks</div>
+      </div>
+      <div class="hud-item">
         <div class="hud-label">Multi-Divisa</div>
-        <div class="hud-val">VES · USD · USDT</div>
+        <div class="hud-val">USD / BCV / USDT</div>
       </div>
     </div>
 
+    <!-- Architecture Section -->
+    <section id="architecture" class="arch-container">
+      <div class="section-title">Arquitectura de Circuito Cerrado</div>
+      <div class="section-sub">Unificación de ledger transaccional en PostgreSQL con orquestación autónoma</div>
+
+      <div class="arch-grid">
+        <div class="arch-step">
+          <span class="arch-step-num">Fase 1 · Ingesta</span>
+          <h4>1pay Interceptor & Soundbox</h4>
+          <p>Detección en tiempo real de transferencias bancarias y Pago Móvil. Anuncio auditivo en mostrador con síntesis femenina y confirmación matemática en 1.8 segundos.</p>
+        </div>
+        <div class="arch-step">
+          <span class="arch-step-num">Fase 2 · Conciliación</span>
+          <h4>Ledger Unificado PostgreSQL</h4>
+          <p>Un solo repositorio de verdad para saldos, inventarios y clientes. Cierre instantáneo de facturas en <code>1tab</code>, <code>1commerce</code> y <code>1service</code>.</p>
+        </div>
+        <div class="arch-step">
+          <span class="arch-step-num">Fase 3 · Ejecución</span>
+          <h4>1delivery Auto-Dispatch</h4>
+          <p>Al confirmar el pago de un repuesto o producto, se asigna automáticamente una ruta al motorizado más cercano sin intervención humana en caja.</p>
+        </div>
+        <div class="arch-step">
+          <span class="arch-step-num">Fase 4 · Descubrimiento</span>
+          <h4>1search Radar Index</h4>
+          <p>Catálogo hiperlocal en <code>search.1group.media</code> con sincronización de inventario y comparación de precios en tiempo real para consumidores de Anaco.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Products Section -->
     <section id="products">
-      <div class="section-title">Ecosistema Modular</div>
-      <div class="section-sub">Software de precisión probado en el terreno venezolano</div>
+      <div class="section-title">Ecosistema de Software</div>
+      <div class="section-sub">Herramientas de precisión para el terreno venezolano</div>
 
       <div class="grid-products">
-        <!-- 1pay Card -->
+        <!-- 1pay -->
         <div class="product-card card-1pay">
           <div class="card-body">
-            <span class="card-tag" style="color: var(--speed-gold);">⚡ Instant Payment Engine · Baja Edition</span>
+            <span class="card-tag" style="color: var(--speed-gold);">⚡ Instant Payment Engine</span>
             <h3 class="card-title">1pay</h3>
             <p class="card-desc">
               Verificación automática de Pago Móvil, Zelle y Binance Pay en mostrador. Anuncio por voz en tiempo real con soundbox inteligente.
             </p>
             <ul class="feature-list">
               <li><span>✓</span> Interceptor Android en segundo plano 24/7</li>
-              <li><span>✓</span> Síntesis de voz (TTS) para cajeros</li>
-              <li><span>✓</span> Búsqueda por 4 dígitos de referencia</li>
+              <li><span>✓</span> Síntesis de voz (TTS) para cajeros en mostrador</li>
+              <li><span>✓</span> Búsqueda por 4 dígitos de referencia bancaria</li>
               <li><span>✓</span> Tasa oficial BCV sincronizada en vivo</li>
             </ul>
           </div>
@@ -331,10 +351,10 @@
           </div>
         </div>
 
-        <!-- 1tab Card -->
+        <!-- 1tab -->
         <div class="product-card card-1tab">
           <div class="card-body">
-            <span class="card-tag" style="color: #38BDF8;">🍸 Gastronomía & Bar POS · Dakar Edition</span>
+            <span class="card-tag" style="color: var(--electric-blue);">🍸 Gastro & Bar POS</span>
             <h3 class="card-title">1tab</h3>
             <p class="card-desc">
               Comandas móviles y cuentas abiertas para bares y restaurantes. Tus comensales abren su tab desde el móvil y pagan sin hacer colas.
@@ -347,27 +367,87 @@
             </ul>
           </div>
           <div class="card-actions">
-            <a href="https://tab.1group.media" class="btn btn-ghost" style="width: 100%;">Explorar 1tab →</a>
+            <a href="https://tab.1group.media" class="btn btn-ghost" style="width: 100%;">Abrir 1tab →</a>
           </div>
         </div>
 
-        <!-- 1commerce Card -->
+        <!-- 1commerce -->
         <div class="product-card card-1commerce">
           <div class="card-body">
-            <span class="card-tag" style="color: #10B981;">🛒 Conversational Commerce · Offshore Edition</span>
+            <span class="card-tag" style="color: var(--emerald-green);">🛒 WhatsApp Commerce</span>
             <h3 class="card-title">1commerce</h3>
             <p class="card-desc">
               Ventas fluidas por WhatsApp y redes sociales. Catálogo interactivo con carrito de compras y verificación inmediata de transacciones.
             </p>
             <ul class="feature-list">
-              <li><span>✓</span> Catálogo de productos optimizado</li>
+              <li><span>✓</span> Catálogo de productos y repuestos en vivo</li>
               <li><span>✓</span> Link de pago directo y checkout móvil</li>
-              <li><span>✓</span> Control de despacho y gestión de pedidos</li>
-              <li><span>✓</span> Cero comisiones ocultas</li>
+              <li><span>✓</span> Disparo automático de courier en 1delivery</li>
+              <li><span>✓</span> Facturación transparente en USD y VES</li>
             </ul>
           </div>
           <div class="card-actions">
-            <button class="btn btn-ghost" style="width: 100%; opacity: 0.6; cursor: not-allowed;">Próximamente</button>
+            <a href="https://shop.1group.media" class="btn btn-ghost" style="width: 100%;">Visitar Tienda →</a>
+          </div>
+        </div>
+
+        <!-- 1service -->
+        <div class="product-card card-1service">
+          <div class="card-body">
+            <span class="card-tag" style="color: #F87171;">🔧 Taller & Pasaporte Vehicular</span>
+            <h3 class="card-title">1service</h3>
+            <p class="card-desc">
+              Gestión operativa para talleres de motos y automóviles. Cotizaciones digitales en USD/VES, anticipos por Pago Móvil y pasaporte digital.
+            </p>
+            <ul class="feature-list">
+              <li><span>✓</span> Cotizaciones con aprobación por cliente en 1-click</li>
+              <li><span>✓</span> Pasaporte de historial de servicio por placa / VIN</li>
+              <li><span>✓</span> Diligencias automáticas de repuestos vía courier</li>
+              <li><span>✓</span> Control de mano de obra y repuestos</li>
+            </ul>
+          </div>
+          <div class="card-actions">
+            <a href="https://service.1group.media" class="btn btn-ghost" style="width: 100%;">Panel de Taller →</a>
+          </div>
+        </div>
+
+        <!-- 1delivery -->
+        <div class="product-card card-1delivery">
+          <div class="card-body">
+            <span class="card-tag" style="color: var(--purple-acc);">🏍️ Despacho & Flota Motorizada</span>
+            <h3 class="card-title">1delivery</h3>
+            <p class="card-desc">
+              Riel de despacho centralizado y PWA móvil para motorizados en Anaco. Liquidación instantánea de honorarios vía Pago Móvil al completar entrega.
+            </p>
+            <ul class="feature-list">
+              <li><span>✓</span> Despacho automático desde 1commerce y 1service</li>
+              <li><span>✓</span> Portal smartphone para conductores con GPS y ruta</li>
+              <li><span>✓</span> Código de verificación de entrega seguro</li>
+              <li><span>✓</span> Pago inmediato de comisión al motorizado</li>
+            </ul>
+          </div>
+          <div class="card-actions">
+            <a href="https://delivery.1group.media" class="btn btn-ghost" style="width: 100%;">Central de Despacho →</a>
+          </div>
+        </div>
+
+        <!-- 1search -->
+        <div class="product-card card-1search">
+          <div class="card-body">
+            <span class="card-tag" style="color: var(--electric-blue);">🔍 Radar Hiperlocal de Precios</span>
+            <h3 class="card-title">1search</h3>
+            <p class="card-desc">
+              Buscador y comparador de precios hiperlocal para Anaco. Encuentra repuestos, licores, talleres y servicios con stock y precios en vivo.
+            </p>
+            <ul class="feature-list">
+              <li><span>✓</span> Búsqueda multi-pilar (repuestos, bebidas, talleres)</li>
+              <li><span>✓</span> Filtro de stock y cotización inmediata en USD/VES</li>
+              <li><span>✓</span> Botón de compra y despacho directo</li>
+              <li><span>✓</span> Indexación automática de comercios aliados</li>
+            </ul>
+          </div>
+          <div class="card-actions">
+            <a href="https://search.1group.media" class="btn btn-ghost" style="width: 100%;">Buscar en Anaco →</a>
           </div>
         </div>
       </div>
@@ -378,12 +458,12 @@
       <div class="road-info">
         <h3>Ingeniería Robusta · Resiliencia Extrema</h3>
         <p>
-          Diseñado, construido y operado en Venezuela. Diseñado para operar con latencia mínima incluso bajo condiciones de red y energía adversas.
+          Diseñado, construido y operado en Anaco, Venezuela. Optimizado para operar con latencia mínima y modo offline ante cortes eléctricos y caídas de conectividad.
         </p>
       </div>
-      <a href="mailto:ron@1group.media" class="rider-badge">
-        <span>🛡️</span>
-        <span>SLA 99.98% · Operaciones 24/7</span>
+      <a href="https://instagram.com/motozen_adv" target="_blank" rel="noopener" class="rider-badge">
+        <span>🏍️</span>
+        <span>@motozen_adv · Probado en Terreno</span>
       </a>
     </div>
 
